@@ -5,7 +5,10 @@
     <a href="https://github.com/Simula-UiB/CryptaPath/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
 </p>
 
-__CryptaPath__ is a tool built on top of the Crush library to automate the generation of systems of Binary Decision Diagrams (BDDs) from implementations of cryptographic algorithms (ciphers using S-boxes and sponge hash functions are supported) and their solving process. The objective of this tool is to provide an easy way to evaluate the resistance of a cryptosystem to algebraic attacks.
+__CryptaPath__ is a tool built on top of the Crush library to automate the generation of systems of Binary Decision 
+Diagrams (BDDs) from implementations of cryptographic algorithms (ciphers using S-boxes and sponge hash functions
+are supported) and their solving process. The objective of this tool is to provide an easy way to evaluate the resistance 
+of a cryptosystem to algebraic attacks.
 
 **WARNING:** This tool was developed in an academic context and no part of this code should be used in any production system. In particular the implementations of cryptosystems in this tool are not safe for any real world usage.
 
