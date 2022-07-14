@@ -1,7 +1,7 @@
 use std::cell::RefCell;
 use std::collections::HashMap;
 use std::fmt;
-use std::fmt::{Error as FmtError, Debug};
+use std::fmt::{Debug, Error as FmtError};
 use std::fmt::Write as FmtWrite;
 use std::fs;
 use std::fs::OpenOptions;
@@ -21,11 +21,11 @@ use crush::soc::system::System;
 use pathfinder::code_gen::{LLHandler, SBoxHandler};
 use pathfinder::diff_solver::{Librarian, SimpleSolver, SolverResultOk, SPFactory};
 // use pathfinder::diff_solver::post_processing_v3::{PostPFactory, PostProc, ProcessedResult as ProcessedResultV3};
-use pathfinder::diff_solver::post_processing_v5::{BTHandler, TraceLogger, AnalysisMode};
-use pathfinder::diff_solver::post_processing_v5::{Handlers, SolvedSocMeta, start_post_processing, DisplayResult, ProcessedResult};
+use pathfinder::diff_solver::post_processing_v5::{AnalysisMode, BTHandler, TraceLogger};
+use pathfinder::diff_solver::post_processing_v5::{DisplayResult, Handlers, ProcessedResult, SolvedSocMeta, start_post_processing};
 
+use crate::dl::cg_original::cipher::CipherStructure;
 use crate::dl::progress::Progress;
-use crate::dl::cg_original::cipher::{CipherStructure};
 
 pub mod builders;
 pub mod cg_original;
@@ -371,7 +371,7 @@ impl<B, S> RawSoc<B, S>
     /// Note that that if this is to be used as a file name, then the caller must ensure that a file
     /// extension is set.
     fn make_file_name(setup: &Setup, cipher_name: &str) -> String {
-        format!("{}_r{}_lim{}_mode{}",
+        format!("{}_r{}_lim{}_mode_{}",
                 cipher_name,
                 setup.num_rounds(),
                 setup.soft_lim(),
